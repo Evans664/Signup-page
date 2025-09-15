@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    main{
+      border: 1px solid black;
+      border-radius: 8px;
+      margin-left: 400px;
+      margin-right: 500px;
+      padding: 40px;
+    }
+    form{
+      display: flex;
+      flex-direction: column;
+    }
+    #inputbox{
+      width: 300px;
+    }
+    #btn{
+      width: 300px;
+      height: 30px;
+      background-color: green;
+    }
+    #btn{
+      margin-top: 20px;
+      border: none;
+      border-radius: 8px;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <main>
+      <form>
+        <h1>Signup Form</h1>
+        <h3>Username</h3>
+        <input type="text" name="" id="inputbox">
+        <h3>Email</h3>
+        <input type="email" name="" id="inputbox">
+        <h3>Password</h3>
+        <input type="text" name="" id="inputbox">
+        <h3>Confirm Password</h3>
+        <input type="text" name="" id="inputbox">
+        <button id="btn" onclick="button()">Signup</button>
+      </form>
+  </main>
+</body>
+</html>
+<script>
+  let inputbox = document.getElementById('inputbox').value.trim()
+  // ...existing code...
+function button(event) {
+    event.preventDefault(); // Prevent form submission
+
+    // Get all input fields
+    let inputs = document.querySelectorAll('#inputbox');
+    let password = inputs[2].value.trim();
+    let confirmPassword = inputs[3].value.trim();
+
+    if (password.length === confirmPassword.length && password !== confirmPassword) {
+        alert('Passwords have the same length but are not the same. Please make them the same.');
+    }
+}
+// ...existing code...
+</script>
