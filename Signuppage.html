@@ -37,13 +37,13 @@
       <form>
         <h1>Signup Form</h1>
         <h3>Username</h3>
-        <input type="text" name="" id="inputbox">
+        <input type="text" placeholder="input username" id="userName">
         <h3>Email</h3>
-        <input type="email" name="" id="inputbox">
+        <input type="email" placeholder="input Email" id="emailBox">
         <h3>Password</h3>
-        <input type="password" name="" id="passwordbox">
+        <input type="password" placeholder="Input password" id="passwordbox">
         <h3>Confirm Password</h3>
-        <input type="password" name="" id="confirmPassword">
+        <input type="password" placeholder="confirm Password" id="confirmPassword">
         <button id="btn" onclick="button()">Signup</button>
       </form>
   </main>
@@ -51,25 +51,40 @@
 </html>
 <script>
 function button() {
-  let inputbox = document.getElementById('inputbox').value.trim()
+  let userName = document.getElementById('userName').value.trim()
   let passwordbox = document.getElementById('passwordbox').value.trim()
   let confirmPassword = document.getElementById('confirmPassword').value.trim()
+  let emailBox = document.getElementById('emailBox').value.trim()
     console.log(passwordbox, confirmPassword);
 
-    if (inputbox === '' && passwordbox === '' && confirmPassword === '') {
-        alert("All fields are required.")
-    }
-    else if (passwordbox.length === confirmPassword.length) {
-        alert("Passwords have the same length.")
-    }
-    else if (passwordbox.length < 6 && confirmPassword.length < 6 ) {
-      alert("password length is too small")
-    }
-     else if (passwordbox !== confirmPassword) {
-        alert("Passwords do not match. Please re-enter.")
-    } 
-    else {
-        alert("Signup Successful")
-    }
+  if (userName === '' && passwordbox === '' && confirmPassword === '' && emailBox === '') {
+      alert("All fields are required.");
+  }
+  else if (userName === '') {
+      alert("Username is required.");
+  }
+  else if (emailBox === '') {
+      alert("Email is required.");
+  }
+  else if (passwordbox === '') {
+      alert("Password is required.");
+  }
+  else if (confirmPassword === '') {
+      alert("Please confirm your password.");
+  }
+  else if (passwordbox.length < 6 || confirmPassword.length < 6 ) {
+    alert("Password length is too small");
+  }
+  else if (passwordbox !== confirmPassword) {
+      alert("Passwords do not match. Please re-enter.");
+  } 
+  else {
+      alert(`Sign up successful your username is ${userName}`);
+  }
 }
+
+
+
+
+
 </script>
