@@ -34,7 +34,7 @@
 </head>
 <body>
   <main>
-      <form>
+      <form action="#">
         <h1>Signup Form</h1>
         <h3>Username</h3>
         <input type="text" placeholder="input username" id="userName">
@@ -44,7 +44,7 @@
         <input type="password" placeholder="Input password" id="passwordbox">
         <h3>Confirm Password</h3>
         <input type="password" placeholder="confirm Password" id="confirmPassword">
-        <button id="btn" onclick="button()">Signup</button>
+        <button type="button" id="btn" onclick="button()">Signup</button>
       </form>
   </main>
 </body>
@@ -69,11 +69,11 @@ function button() {
   else if (passwordbox === '') {
       alert("Password is required.");
   }
-  else if (confirmPassword === '') {
-      alert("Please confirm your password.");
-  }
   else if (passwordbox.length < 6 || confirmPassword.length < 6 ) {
     alert("Password length is too small");
+  }
+  else if (confirmPassword === '') {
+      alert("Please confirm your password.");
   }
   else if (passwordbox !== confirmPassword) {
       alert("Passwords do not match. Please re-enter.");
