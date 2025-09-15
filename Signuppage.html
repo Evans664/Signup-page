@@ -54,21 +54,22 @@ function button() {
   let inputbox = document.getElementById('inputbox').value.trim()
   let passwordbox = document.getElementById('passwordbox').value.trim()
   let confirmPassword = document.getElementById('confirmPassword').value.trim()
-    let inputs = document.querySelectorAll('#inputbox');
-    console.log(password, confirmPassword);
-    
+    console.log(passwordbox, confirmPassword);
 
-    if (passwordbox.length === confirmPassword.length) {
-        alert('Passwords have the same length.');
+    if (inputbox === '' && passwordbox === '' && confirmPassword === '') {
+        alert("All fields are required.")
     }
-    else if (password.length < 6 && confirmPassword.length < 6 ) {
-      alert('password length is too small')
+    else if (passwordbox.length === confirmPassword.length) {
+        alert("Passwords have the same length.")
     }
-     else if (password !== confirmPassword) {
-        alert('Passwords do not match. Please re-enter.');
+    else if (passwordbox.length < 6 && confirmPassword.length < 6 ) {
+      alert("password length is too small")
+    }
+     else if (passwordbox !== confirmPassword) {
+        alert("Passwords do not match. Please re-enter.")
     } 
     else {
-        alert('All feilds are required');
+        alert("All feilds are required")
     }
 }
 </script>
