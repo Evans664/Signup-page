@@ -51,11 +51,7 @@
 </html>
 <script>
   let inputbox = document.getElementById('inputbox').value.trim()
-  // ...existing code...
-function button(event) {
-    event.preventDefault(); // Prevent form submission
-
-    // Get all input fields
+function button() {
     let inputs = document.querySelectorAll('#inputbox');
     let password = inputs[2].value.trim();
     let confirmPassword = inputs[3].value.trim();
@@ -64,5 +60,4 @@ function button(event) {
         alert('Passwords have the same length but are not the same. Please make them the same.');
     }
 }
-// ...existing code...
 </script>
